@@ -1,10 +1,12 @@
 import './App.css';
-import PokemonFlipper from './pokemon-components/Flipper';
+// import PokemonFlipper from './pokemon-components/Flipper';
+import Todos from './todo-components/todo';
 
 function App() {
   return (
     <div>
-      <PokemonFlipper />
+      {/* <PokemonFlipper /> */}
+      <Todos />
     </div>
   )
 }

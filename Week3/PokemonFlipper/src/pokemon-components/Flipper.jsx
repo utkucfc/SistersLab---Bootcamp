@@ -10,7 +10,6 @@ const getRandomElementFromArr = (arr) => {
     return randomItem;
 };
 
-
 const PokemonFlipper = () => {
     const [rotate, setRotate] = useState(false);
     const [currentStatus, setCurrentStatus] = useState(options[0]);
@@ -25,27 +24,32 @@ const PokemonFlipper = () => {
         }, 1000);
     };
 
+
     const Counters = () => {
-        const LastFR = () => {
-            if (results.length > 0) {
-                return <span>Last flip's result: {currentStatus}</span>
-            }
-        }
+        const LastFR = () => { return <span>Last flip's result: {currentStatus}</span> }
         const TotalFlip = () => { <span>{results.length}</span> };
-        const TotalPika = results.filter((el) => { return el === 'Pikachu' })
-        const TotalMimi = results.filter((el) => { return el === 'Mimikyu' })
+        const TotalMimi = results.filter((el) => el === options[1]).length
+        const TotalPika = results.filter((el) => el === options[0]).length
+        
+        const Totals = () => {
+            return (
+                <>
+                    <br />
+                    <span>Total Pikachu Flips: {TotalPika}</span>
+                    <br />
+                    <span>Total Mimikyu Flips: {TotalMimi}</span>
+                </>
+            )
+        }
+
         return (
             <>
-                <LastFR />
+                {results.length > 0 && !rotate && <LastFR />}
                 <TotalFlip />
-                <br />
-                <span>Total Pikachu Flips: {TotalPika.length}</span>
-                <br />
-                <span>Total Mimikyu Flips: {TotalMimi.length}</span>
+                <Totals />
             </>
         )
     }
-
     return (
         <div>
             <h1>Pikahcu or Mimikyu</h1>
@@ -58,5 +62,6 @@ const PokemonFlipper = () => {
         </div>
     );
 };
+
 
 export default PokemonFlipper;
