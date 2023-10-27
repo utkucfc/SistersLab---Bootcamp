@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFE9AD;
+}
+
+.main {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(bg.png);
+    background-size: 100%;
+    width: 600px;
+    height: 750px;
+    padding-top: 50px;
+    border-radius: 50px;
+}
+
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 64px;
+    font-weight: 800;
+    background-color: #FBC676;
+    border-radius: 20px;
+    width: 65%;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: #4c4f52;
+}
+
+.content * {
+    font-family: 'Caveat', cursive;
+}
+
+.add {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.add>input {
+    font-size: 48px;
+    margin: 0;
+    padding: 0;
+    border: none #FBC676;
+    border-bottom-style: dashed;
+    background-color: transparent;
+    height: 100%;
+}
+
+.add>button {
+    width: 60px;
+    height: 60px;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+li {
+    margin: 10px 0 10px 10%;
+}
+li div{
+    display: flex;
+    
+}
+
+ul {
+    width: 80%;
+    padding-left: 10%;
+    margin: 0;
+}
+
+button {
+    background-color: transparent;
+    border: 3px solid #000;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 24px;
+    margin: 5px 10px;
+    height: 100%;
+    cursor: pointer;
+
+}
+button:disabled {
+    cursor: not-allowed;
+
+}

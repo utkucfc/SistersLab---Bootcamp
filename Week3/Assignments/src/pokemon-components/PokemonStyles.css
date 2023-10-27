@@ -1,0 +1,30 @@
+.Pokemon-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.Pokemon {
+    height: 100%;
+    position: relative;
+}
+
+.Pokemon-rotate img {
+    transform: rotateY( -360deg );
+    transition: transform 1s ease;
+}
+
+.Pokemon-front, .Pokemon-back {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.Pokemon-front {
+    z-index: 2;
+}
+.Pokemon-back {
+    transform: rotateY(180deg);
+}
