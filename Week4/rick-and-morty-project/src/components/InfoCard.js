@@ -1,25 +1,17 @@
 import {
-  Autocomplete,
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   IconButton,
-  Stack,
-  TextField,
   Typography,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-const CharacterCard = ({ FilteredCharacters }) => {
+const InfoCard = ({ FilteredCharacters }) => {
   return (
-    <Stack
-      spacing={{ xs: 1, sm: 2 }}
-      direction="row"
-      useFlexGap
-      flexWrap="wrap"
-    >
+    <>
       {FilteredCharacters.map((character) => (
         <Card key={character.id} sx={{ width: "150px" }}>
           <CardMedia
@@ -46,7 +38,7 @@ const CharacterCard = ({ FilteredCharacters }) => {
           </CardActions>
         </Card>
       ))}
-    </Stack>
+    </>
   );
 };
-export default CharacterCard;
+export default InfoCard;

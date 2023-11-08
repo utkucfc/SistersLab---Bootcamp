@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
 import { fetchCharacters } from "../api";
-import {
-  Autocomplete,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  IconButton,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import CharacterCard from "./CharacterCard";
+import { Stack, TextField } from "@mui/material";
+import InfoCard from "../../components/InfoCard";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
-  const [filterText, setFilterText] = useState(""); // Filtre metni için bir state ekleyin
-
+  const [filterText, setFilterText] = useState("");
+  const [favorites, setFavorites] = useState([]);
   const getCharacters = async () => {
     const characters = await fetchCharacters();
     setCharacters(characters);
@@ -39,7 +27,7 @@ const Characters = () => {
   };
 
   const handleFilterChange = (e) => {
-    setFilterText(e.target.value); // Filtre metnini güncelle
+    setFilterText(e.target.value);
   };
 
   return (
@@ -50,11 +38,18 @@ const Characters = () => {
           label="Character"
           variant="standard"
           value={filterText}
-          onChange={handleFilterChange} // TextField'a yazı yazılınca çalışacak fonksiyon
+          onChange={handleFilterChange}
           sx={{ width: 300 }}
           size="small"
         />
-        <CharacterCard FilteredCharacters={FilteredCharacters()} />
+        <Stack
+          spacing={{ xs: 1, sm: 2 }}
+          direction="row"
+          useFlexGap
+          flexWrap="wrap"
+        >
+          <InfoCard FilteredCharacters={FilteredCharacters()} />
+        </Stack>
       </Stack>
     </div>
   );
